@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
+  
+  <title>Frontend Mentor | Contact form</title>
+  
+</head>
+<body>
+  
+    <div class="mensaje-confirmacion" id="mensaje-confirmacion">
+      <span class="mensaje-confirmacion__message-sent">Message Sent!</span>
+      <span class="mensaje-confirmacion__thanks">Thanks for completing the form. We'll be in touch soon!</span>
+    </div>
+
+    <main class="main">
+      <h1 class="main__title">Contact Us</h1>
+      
+      <form class="formulario" id='formulario' action="">
+      
+          <!-- grupo name -->
+          <div class="formulario__grupo formulario__grupo-name" id='grupo-name'>
+            <label class="formulario__label" for='name'>First Name</label>
+            <input type="text" class="formulario__input" id='name' name='name'>
+            <p class="formulario__input-error">This field is requiered</p>
+          </div>
+          
+          <!-- grupo lastname -->
+          
+          <div class="formulario__grupo formulario__grupo-lastname" id='grupo-lastname'>
+            <label class="formulario__label" for='lastname'>last Name</label>
+            <input type="text" class="formulario__input" id='lastname' name='lastname'>
+            <p class="formulario__input-error">This field is requiered</p>
+          </div>
+          
+          <!-- grupo email -->
+          <div class="formulario__grupo formulario__grupo-email" id='grupo-email'>
+            <label class="formulario__label" for='email'>Email</label>
+            <input type="email" class="formulario__input" id='email' name='email'>
+            <p class="formulario__input-error"></p>
+           
+          </div>
+          
+          <!-- grupo radios -->
+          
+          <div class="formulario__grupo formulario__grupo-radio" id='grupo-radio'>
+            <label class="formulario__label">Query Type</label>
+            
+            <div>
+              <label class="formulario__input formulario__radio-container" name="label1">
+                <input type="radio" class="formulario__input-radio" name="radio">
+                <span class="formulario__radio-option">General Enquiry</span>
+              </label>
+              
+              <label class="formulario__input formulario__radio-container" name="label2">
+                <input type="radio" name="radio" class="formulario__input-radio">
+                <span class="formulario__radio-option">Support Request</span>
+              </label>
+            </div>
+            <p class="formulario__input-error">Please select a query type</p>
+            
+          </div>
+          
+          <!-- grupo message -->
+          
+          <div class="formulario__grupo formulario__grupo-message" id='grupo-message'>
+            <label class="formulario__label" for='email'>Message</label>
+            <textarea class="formulario__input formulario__input-message" id='message' name='message'></textarea>
+            <p class="formulario__input-error">This field is requiered</p>
+          </div>
+          
+          <!-- grupo checkbox -->
+          <div class="formulario__grupo " id='grupo-checkbox'>
+            
+            <label class="formulario__grupo-checkbox">
+              <input type="checkbox" class="formulario__input-checkbox" name="checkbox" id='checkbox'>
+              <label class="formulario__label" for='checkbox'>I consent to being contacted by the team</label>
+            </label>
+            <p class="formulario__input-error">This field is requiered</p>
+            
+          </div>
+          
+          <!-- grupo submit -->
+         
+          <div class="formulario__grupo formulario__grupo-btn" id='grupo-btn'>
+            <button class="formulario__btn" name="btn">Submit</button>
+          </div>
+      </form>
+    </main>
+
+    <script src="javascript/formulario.js"></script>
+  
+  </body>
+</html>

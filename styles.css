@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+:root{
+	
+	/*colors*/
+
+	--Green-lighter: hsl(148, 38%, 91%);
+	--Green-medium: hsl(169, 82%, 27%);
+	--Red:hsl(0, 66%, 54%);
+	--White: hsl(0, 0%, 100%);
+	--Grey-medium: hsl(186, 15%, 59%);
+	--Grey-darker: hsl(187, 24%, 22%);
+	
+	/*font*/
+	--karla:"Karla", sans-serif;
+	/*font size*/
+	--label-size: 16px;
+	/*radio*/
+	--radio: 10px;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	
+	background-color: var(--Green-lighter);
+	margin: 30px 0;
+	background-color: var(--Green-lighter);
+    margin: 30px 0;
+    min-height: 100vh;
+}
+
+.main{
+	
+	width: 90%;
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 1rem;
+	background-color: var(--White);
+	font-family: var(--karla);
+	font-size: 16px;
+	border-radius: var(--radio);
+	color: var(--Grey-darker);
+}
+
+.main__title{
+	font-weight: 700;
+	padding: 1rem 0;
+	font-size: 2rem;
+}
+
+/*conjunto de campos de texto y seleccion*/
+.formulario{
+	
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: auto;
+	gap: 20px;
+}
+
+.formulario__label{
+	display: block;
+	font-size: var(--label-size);
+}
+
+.formulario__label:after{
+	
+	content: '*';
+	display: inline;
+	vertical-align: baseline;
+	color: var(--Green-medium);
+	margin-left: 5px;
+}
+
+.formulario__input{
+	
+	display: block;
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	color: var(--Grey-darker);
+	border: 1px solid var(--Grey-darker);
+	border-radius: var(--radio);
+	margin: 10px 0;
+	transition: .3s ease all;
+	cursor: pointer;
+}
+
+.formulario__input:hover, .formulario__input:focus{
+	
+	border: 3px solid var(--Green-medium);
+	outline: none;
+}
+
+.formulario__input-error{
+	color: var(--Red);
+	font-size: 12px;
+	display: none;
+}
+
+.formulario__input-error-activo{display: block;}
+
+/*radios*/
+
+.formulario__radio-container{
+	display: flex;
+	align-items: center;
+	gap: 1rem;	
+}
+
+.formulario__input-radio{
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border: 2px solid var(--Green-lighter);
+	border-radius: 50%;
+	outline: none;
+	position: relative;
+}
+
+.formulario__input-radio:checked{
+	
+	background-position: center;
+	background-size: cover;
+	background-image: url(../assets/images/icon-radio-selected.svg);
+}
+
+.formulario__input-radio:checked::before{
+	content:"";
+	display: block;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: var(--Green-medium);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.checked{background-color: var(--Green-lighter);}
+
+.unchecked{background-color: var(--White);}
+
+/*grupo message*/
+
+.formulario__input-message{
+	
+	height: 200px;
+	padding: 1rem 1.5rem;
+	line-height: 30px;
+	font-family: var(--karla);
+	font-size: 20px;
+}
+
+/*grupo checkbox*/
+
+.formulario__grupo-checkbox{
+	
+	display: flex;
+	align-items: center;
+	gap:1rem;
+	margin: 10px 0;
+}
+
+.formulario__input-checkbox{
+	
+	appearance: none; 
+	width: 20px;
+	height: 20px;
+	border: 2px solid var(--Grey-medium);
+	cursor: pointer;
+}
+
+.formulario__input-checkbox:checked{
+	border-color: var(--Green-medium);
+	border-radius: 4px;
+	background-position: center;
+	background-size: cover;
+	background-image: url(../assets/images/icon-checkbox-check.svg);
+}
+
+/*grupo submit*/
+
+.formulario__btn{
+	
+	font-family: var(--karla);
+	width: 100%;
+	padding: 1rem 0;
+	color: var(--White);
+	background-color: var(--Green-medium);
+	text-align: center;
+	border: none;
+	border-radius: 10px;
+	font-size: 16px;
+}
+
+/*mensaje de confirmacion*/
+
+.mensaje-confirmacion{
+	
+	width: 75%;
+	max-width: 365px;
+	margin: 0 auto;
+	height: 100px;
+	display: none;
+	flex-direction: column;
+	align-items: space-around;
+	justify-content: center;
+	gap: 10px;
+	border-radius: 10px;
+	background-color: var(--Grey-darker);
+	padding: 1.5rem 1rem;
+	color: var(--White);
+}
+
+.mensaje-confirmacion-activo{display: flex;}
+
+.mensaje-confirmacion__message-sent{
+	
+	text-align: start;
+	font-family: var(--karla);
+	font-size: .9rem;
+	font-weight: 400;
+	position: relative;
+	padding-left: 30px;
+}
+
+.mensaje-confirmacion__message-sent:before{
+	
+	content: "";
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	background-position: center;
+	background-size: cover;
+	background-image: url(../assets/images/icon-success-check.svg);
+	left: 0;
+}
+
+.mensaje-confirmacion__thanks{
+	font-family: var(--karla);
+	font-size: .8rem;	
+}
+
+
+/*queries*/
+
+@media (min-width: 700px){
+	
+	.formulario{
+		grid-template-columns: 1fr 1fr;
+		grid-auto-rows: auto;
+		gap: 10px;
+		grid-template-areas:
+		"name lastname"
+		"email email"
+		"radio radio"
+		"message message"
+		"checkbox checkbox"
+		"btn btn";
+	}
+	
+	#grupo-name{grid-area: name;}
+	
+	#grupo-lastname{grid-area: lastname;}
+	
+	#grupo-email{grid-area: email;}
+	
+	#grupo-radio{grid-area: radio;}
+	
+	#grupo-message{grid-area: message;}
+	
+	#grupo-checkbox{grid-area: checkbox;}
+	
+	#grupo-btn{grid-area: btn;}
+	
+	.formulario__grupo-radio > div{
+		display: flex;
+		gap: 20px;
+	}
+	.formulario__input-message{
+		height: 100px;
+	}
+	
+	/*mensaje de confirmacion*/
+	
+	.mensaje-confirmacion{
+		width: 60%;
+		max-width: 500px;
+		height: 120px;
+		gap: 10px;
+	}
+	
+	.mensaje-confirmacion__message-sent{
+		font-size: 1.5rem;
+		padding-left: 50px;
+	}
+
+	.mensaje-confirmacion__message-sent:before{
+		width: 25px;
+		height: 25px;
+	}
+
+	.mensaje-confirmacion__thanks{font-size: 1rem;}
+
+}
